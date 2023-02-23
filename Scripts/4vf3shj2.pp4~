@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FireControl : MonoBehaviour
+{
+    public GameObject fire;
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("pan object"))
+        {
+            fire.SetActive(true);
+        }
+        else fire.SetActive(false);
+    }
+
+    public void OnCollisionStay(Collision collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        if (!collision.gameObject.CompareTag("pan object"))
+            fire.SetActive(false);
+    }
+
+    public void OnCollisionExit(Collision collision)
+    {
+        Debug.Log("Call");
+        fire.SetActive(false);
+    }
+}   

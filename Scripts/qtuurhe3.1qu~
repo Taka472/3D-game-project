@@ -1,0 +1,63 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class CutsceneControl : MonoBehaviour
+{
+    public GameObject player;
+    public SpawnPeople spawner;
+
+    public static bool intro = true;
+
+    public GameObject tutorialCutscene;
+
+    public string[] textMessage;
+    public Text[] messageBox;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && intro)
+        {
+            intro = false;
+            EndIntroCutscene();
+        }
+    }
+
+    public void PlayCutscene()
+    {
+        player.SetActive(false);
+    }
+
+    public void EndTutorialCutscene()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void EndIntroCutscene()
+    {
+        intro = false;
+        player.SetActive(true);
+        tutorialCutscene.SetActive(true);
+        gameObject.SetActive(false);
+    }
+
+    public void EndLoseCutscene()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        DataManager.instance.CreateNew();
+        StartCoroutine(BackToMenu());
+    }
+
+    public IEnumerator BackToMenu()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(0);
+    }
+
+    public void ChangeMessage(int boxIndex, int messageIndex)
+    {
+        messageBox[boxIndex].text = textMessage[messageIndex];
+    }
+}

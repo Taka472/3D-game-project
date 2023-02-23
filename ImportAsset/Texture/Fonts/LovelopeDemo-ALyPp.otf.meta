@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 3647004084954264f9658b49c28eecf3
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Lovelope
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9425bff72ee8b2a41b50e3b93394514c, type: 3}
+  - {fileID: 12800000, guid: 0187345dc222c3840aaf44b19c68428f, type: 3}
+  - {fileID: 12800000, guid: c35f272cb681e984a8dbe998d04598ec, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
